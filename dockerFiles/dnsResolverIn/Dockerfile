@@ -1,3 +1,1 @@
-FROM ubuntu:latest
-
-RUN apt update
+FROM bind:latest
