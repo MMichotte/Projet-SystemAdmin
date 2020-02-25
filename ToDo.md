@@ -11,8 +11,11 @@
 - [X] créer [répository gitHub](https://github.com/MMichotte/Projet-SystemAdmin)
 - [X] créer [répository dockerHub](https://hub.docker.com/repositories) 
 - [X] créer [wiki gitHub](https://github.com/MMichotte/Projet-SystemAdmin/wiki)
-- [ ] se mettre d'accord sur les outils de conception du rapport 
-- [ ] nommer le responsable par mission 
+- [X] se mettre d'accord sur les outils de conception du rapport : [google docs](https://drive.google.com/drive/u/0/folders/1KsQfME9SijyddRHVL8zuym6rgmoJ9-3d)
+- [X] nommer le responsable par mission 
+    - mission n°1 (13/03) : _Daniel Olivier_
+    - mission n°2 (27/03) : _Morgan Valentin_
+    - mission n°3 (09/04) : _Martin Michotte_
 
 ## Conception 
 - [ ] adressage ip (statique)
@@ -91,12 +94,12 @@
 * Un responsable par groupe pour chaque présentation (idem qu'en devWeb)
 
 ### Rapport client 
--> cahier des charges 
--> traduction des besoins du client en language informatique 
--> propositions de solutions techniques avec comparatif des alternatives possible 
--> choix des justification de la solution
--> besoins en maintenance 
--> rapport sur ce qui a été déployé 
+* cahier des charges 
+* traduction des besoins du client en language informatique 
+* propositions de solutions techniques avec comparatif des alternatives possible 
+* choix des justification de la solution
+* besoins en maintenance 
+* rapport sur ce qui a été déployé 
 > max 4-5 pages
 
 ### Rapport technique 
@@ -108,9 +111,10 @@
 > max 3-4 pages
 
 ### Wiki github 
--> Comment installer le service
--> Comment configurer le service
--> Comment maintenir le service 
--> Comment vérifier le bon fonctionnement du service 
--> Comment troubleshooter 
+Une section par service :
+* Comment installer le service
+* Comment configurer le service
+* Comment maintenir le service 
+* Comment vérifier le bon fonctionnement du service 
+* Comment troubleshooter 
 > plus de détail voir p9 de l'énoncé du projet
