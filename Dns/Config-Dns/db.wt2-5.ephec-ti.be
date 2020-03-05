@@ -12,7 +12,7 @@ $TTL    604800
 ; name servers => Resource records de type NS
         IN      NS      ns.wt2-5.ephec-ti.be.
 
-; name servers => Resource records de type NS
+; name servers => Resource records de type A
 ns      IN      A       IP-VPS-Morgan
 
 ; services web
