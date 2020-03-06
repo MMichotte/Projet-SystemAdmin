@@ -29,6 +29,7 @@
   - Contient les zones par défaut
 - **`named.conf.local`**
   - **_/etc/bind/named.conf.local_**
+  - **IMPORTANT !**
   - Contient la liste des noms de domaine gérés par le serveur DNS
 - **`named.conf.options`**
   - **_/etc/bind/named.conf.options_**
