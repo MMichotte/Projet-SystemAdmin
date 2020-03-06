@@ -13,14 +13,14 @@
 - [X] créer [wiki gitHub](https://github.com/MMichotte/Projet-SystemAdmin/wiki)
 - [X] se mettre d'accord sur les outils de conception du rapport : [google docs](https://drive.google.com/drive/u/0/folders/1KsQfME9SijyddRHVL8zuym6rgmoJ9-3d)
 - [X] nommer le responsable par mission 
-    - mission n°1 (13/03) : _Daniel Olivier_
-    - mission n°2 (27/03) : _Morgan Valentin_
+    - mission n°1 (13/03) : _Morgan Valentin_
+    - mission n°2 (27/03) : _Daniel Olivier_
     - mission n°3 (09/04) : _Martin Michotte_
 
 ## Conception 
 - [ ] adressage ip (statique)
-- [ ] design du schéma réseau Woodytoys (logique)
-- [ ] design du schéma réseau prototype (physique)
+- [x] design du schéma réseau Woodytoys (logique)
+- [x] design du schéma réseau prototype (physique)
 
 ## Gestion des Services
 
@@ -30,7 +30,7 @@
 ```
 > domaine : wt2-5.ephec-ti.be
 - [ ] concevoir sous-domaine __wt2-5__
-  - [ ] fichier de zone
+  - [x] fichier de zone
   - [ ] glue records à envoyer au ns parent (professeur) 
 
 ### Web

@@ -2,7 +2,7 @@
 ;
 $ORIGIN wt2-5.ephec-ti.be.
 $TTL    604800
-@       IN      SOA     ns.wt2-5.ephec-ti.be admin.wt2-5.ephec-ti.be (
+@       IN      SOA     ns.wt2-5.ephec-ti.be. admin.wt2-5.ephec-ti.be. (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
@@ -18,7 +18,7 @@ ns      IN      A       IP-VPS-Morgan
 ; services web
 
 serveurWeb      IN      A       IP-VPS-Morgan
-woodytoys       IN      CNAME   serveurWeb
+www             IN      CNAME   serveurWeb
 b2b             IN	CNAME	serveurWeb
 
 ; mail (plus tard)
