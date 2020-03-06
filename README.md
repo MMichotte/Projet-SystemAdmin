@@ -12,9 +12,9 @@ Numéro de groupe: 5
 
 ## Le schéma réseau Woodytoys : 
 
-<img src="/img/logique.png" width="1362" height="531">
+<img src="/img/logique.png" width="1008" height="712">
 
 ---
 ## Le schéma du prototype : 
 
-<img src="/img/physique.png" width="1008" height="712">
+<img src="/img/physique.png" width="1362" height="531">
