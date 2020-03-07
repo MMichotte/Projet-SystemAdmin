@@ -19,8 +19,25 @@ services:
   #    dockerfile: Dockerfile
   #  container_name: mysql-db
 
-  #web-local:
+  web-local:
+    build:
+      context: ./Web-local
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    volumes:
+      - ./Web-local/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./Web-local/sites/:/usr/local/apache2/htdocs/
+    container_name: web-local
 
-  #web-dmz:
-  
+  web-dmz:
+    build:
+      context: ./Web-dmz
+      dockerfile: Dockerfile
+    ports:
+      - 8081:80
+    volumes:
+      - ./Web-dmz/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./Web-dmz/sites/:/usr/local/apache2/htdocs/
+    container_name: web-dmz
   
