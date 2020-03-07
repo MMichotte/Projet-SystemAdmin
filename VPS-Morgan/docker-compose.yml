@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
 
@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "53:53"
+      - "53:53/udp"
     volumes:
       - ./Resolver/resolv.conf:/etc/bind/named.conf
     container_name: resolver
