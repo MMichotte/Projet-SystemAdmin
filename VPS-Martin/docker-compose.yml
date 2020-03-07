@@ -1,26 +1,28 @@
-version: '2'
+version: '3'
 
 services:
 
-  SOA-in:
+  soa-in:
     build: 
       context: ./SOA
       dockerfile: Dockerfile
     ports:
       - "53:53"
+      - "53:53/udp"
     volumes:
       - ./SOA-in/named.conf.local:/etc/bind/named.conf
     container_name: soa-in
   
-  SOA-ext:
+  soa-ext:
     build: 
       context: ./SOA
       dockerfile: Dockerfile
     ports:
-      - "53:53"
+      - "5353:53" # PROBELEM ! : le port 53 du host est déjà utilisé.. solution: reverse-proxy ? 
+      #- "5353:53/udp" 
     volumes:
       - ./SOA-ext/named.conf.local:/etc/bind/named.conf
-    container_name: soa-in
+    container_name: soa-ext
 
   #VoIP:
 
