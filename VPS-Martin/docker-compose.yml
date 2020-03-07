@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+
+  SOA-in:
+    build: 
+      context: ./SOA
+      dockerfile: Dockerfile
+    ports:
+      - "53:53"
+    volumes:
+      - ./SOA-in/named.conf.local:/etc/bind/named.conf
+    container_name: soa-in
+  
+  SOA-ext:
+    build: 
+      context: ./SOA
+      dockerfile: Dockerfile
+    ports:
+      - "53:53"
+    volumes:
+      - ./SOA-ext/named.conf.local:/etc/bind/named.conf
+    container_name: soa-in
+
+  #VoIP:
+
+  
