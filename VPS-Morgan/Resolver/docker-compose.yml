@@ -1,0 +1,9 @@
+version: '2'
+services:
+  resolver:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - /Users/martinmichotte/OneDrive/EPHEC/T206-Admin_Syst-Reseau_2/Projet/Projet-SystemAdmin/Dns/Resolver/resolv.conf:/etc/bind/named.conf
+  
