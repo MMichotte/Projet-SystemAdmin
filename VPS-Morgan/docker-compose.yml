@@ -13,11 +13,18 @@ services:
       - ./Resolver/resolv.conf:/etc/bind/named.conf
     container_name: resolver
 
-  #database:
-  #  build: 
-  #    context: ./Db
-  #    dockerfile: Dockerfile
-  #  container_name: mysql-db
+  database:
+    build: 
+      context: ./Db
+      dockerfile: Dockerfile
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./Db/sql/:/data/
+    environment:
+      MYSQL_ROOT_PASSWORD: sysadmin
+    container_name: mysql-db
 
   web-local:
     build:
