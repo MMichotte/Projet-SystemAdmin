@@ -1,27 +1,51 @@
-version: '3'
+version: '2'
 
 services:
 
   soa-in:
     build: 
-      context: ./SOA
-      dockerfile: Dockerfile
-    ports:
-      - "5353:53" #ATTENTION : dans le résolveur il faudra spécifier : ip_vps_soa-in:5353
-    volumes:
-      - ./SOA-in/named.conf.local:/etc/bind/named.conf
-    container_name: soa-in
-  
-  soa-ext:
-    build: 
-      context: ./SOA
+      context: ./SOA-in
       dockerfile: Dockerfile
     ports:
       - "53:53"
+    networks:
+      local_net:
+          ipv4_address: 172.16.0.3 
     volumes:
-      - ./SOA-ext/named.conf.local:/etc/bind/named.conf
-    container_name: soa-ext
+      - ./SOA-in/named.conf.local:/etc/bind/named.conf
+      - ./SOA-in/interne.db.wt2-5.ephec-ti.be:/etc/bind/interne.db.wt2-5.ephec-ti.be
+    container_name: soa-in
+  
+  web-local:
+    build:
+      context: ./Web-local
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      local_net:
+          ipv4_address: 172.16.0.4
+    volumes:
+      - ./Web-local/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./Web-local/sites/:/usr/local/apache2/htdocs/
+    container_name: web-local
 
   #VoIP:
 
-  
+
+networks:
+
+  local_net:
+      ipam:
+          driver: default
+          config:
+              - subnet: 172.16.0.0/29
+                gateway:  172.16.0.1
+
+  dmz_net:
+    ipam:
+        driver: default
+        config:
+            - subnet: 172.16.0.8/29
+              gateway: 172.16.0.9
