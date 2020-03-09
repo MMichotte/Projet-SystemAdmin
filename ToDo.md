@@ -18,7 +18,7 @@
     - mission n°3 (09/04) : _Martin Michotte_
 
 ## Conception 
-- [ ] adressage ip (statique)
+- [X] adressage ip (statique)
 - [x] design du schéma réseau Woodytoys (logique)
 - [x] design du schéma réseau prototype (physique)
 
@@ -30,16 +30,16 @@
 ```
 > domaine : wt2-5.ephec-ti.be
 - [ ] concevoir sous-domaine __wt2-5__
-  - [x] fichier de zone
+  - [ ] fichier de zone
   - [ ] glue records à envoyer au ns parent (professeur) 
 
 ### Web
 ```diff
 ! due date : 13 mars 
 ```
-- [ ] __outil ERP web__ accessible uniquement en interne 
-- [ ] __portail web__ public (www.woodytoys.be)
-- [ ] __vente en ligne__ accessible revendeurs uniquement (b2b.woodytoys.be)
+- [ ] __outil ERP web__ accessible uniquement en interne (intranet.wt2-5.ephec-ti.be)
+- [ ] __portail web__ public (www..wt2-5.ephec-ti.be)
+- [ ] __vente en ligne__ accessible revendeurs uniquement (b2b.wt2-5.ephec-ti.be)
 
 ### Sécurité
 - [ ] postes doivent avoir accès au services internes et externes
