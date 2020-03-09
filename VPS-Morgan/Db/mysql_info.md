@@ -8,14 +8,10 @@
    ```bash
    docker exec -it mysql-db bash
    ```
-3. Se loger en tant que root 
+3. Vérifier qu'on sait se loger en tant que root 
    ```bash
    mysql -uroot -p
    > password : 'sysadmin' #modifiable dans le docker-compose
-   ```
-4. Créer la DB 
-    ```sql
-   create database woodytoys_db;
    ```
 
 ### Manipuler la DB:
@@ -26,9 +22,9 @@
    ```bash
    docker exec -it mysql-db bash
    ```
-4. Exécuter le script sur notre db
+4. Exécuter le script afin de créer et peupler la DB
    ```bash
-   mysql -uroot -p woodytoys_db < data/temp.sql
+   mysql -uroot -p < data/data.sql
    > password : 'sysadmin' #modifiable dans le docker-compose
    ```
 5. Vérifier que le script c'est bien exécuté
@@ -41,4 +37,8 @@
    show tables;
    select * from ... 
    ```
-   
+6. Ajouter ou modifier des tables ou des données dans la DB
+   ```bash
+   mysql -uroot -p woodytoys_db < data/temp.sql
+   > password : 'sysadmin' #modifiable dans le docker-compose
+   ```
