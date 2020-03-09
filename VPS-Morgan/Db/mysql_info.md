@@ -28,7 +28,7 @@
    ```
 4. Exécuter le script sur notre db
    ```bash
-   mysql -uroot -p woodytoys_db > data/temp.sql
+   mysql -uroot -p woodytoys_db < data/temp.sql
    > password : 'sysadmin' #modifiable dans le docker-compose
    ```
 5. Vérifier que le script c'est bien exécuté
