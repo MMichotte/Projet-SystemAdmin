@@ -1,11 +1,11 @@
 # To Do 
 
 ## VPS
- - [ ] configurer accès professeur 
+ - [X] configurer accès professeur 
     * utilisateur : vvandens (clef ssh publique voir Moodle) 
     * ajouter au sudoers 
     * mdp ******** (voir énoncé projet)
- - [ ] configurer SSH pour chaque membre du groupe sur chaque VPS 
+ - [X] configurer SSH pour chaque membre du groupe sur chaque VPS 
 
 ## Prépa :
 - [X] créer [répository gitHub](https://github.com/MMichotte/Projet-SystemAdmin)
@@ -31,14 +31,15 @@
 > domaine : wt2-5.ephec-ti.be
 - [ ] concevoir sous-domaine __wt2-5__
   - [ ] fichier de zone
-  - [ ] glue records à envoyer au ns parent (professeur) 
+  - [X] glue records à envoyer au ns parent (professeur) 
+    - [ ] envoyé au professeur
 
 ### Web
 ```diff
 ! due date : 13 mars 
 ```
 - [ ] __outil ERP web__ accessible uniquement en interne (intranet.wt2-5.ephec-ti.be)
-- [ ] __portail web__ public (www..wt2-5.ephec-ti.be)
+- [ ] __portail web__ public (www.wt2-5.ephec-ti.be)
 - [ ] __vente en ligne__ accessible revendeurs uniquement (b2b.wt2-5.ephec-ti.be)
 
 ### Sécurité
