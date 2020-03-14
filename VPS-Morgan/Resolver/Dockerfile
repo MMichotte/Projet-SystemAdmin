@@ -1,6 +1,3 @@
-from resystit/bind9:latest
-
-workdir /etc/bind
-
-# EXPOSE 53 not needed, is already included in base image! 
-
+FROM resystit/bind9
+COPY named.conf /etc/bind/named.conf
+CMD ["named", "-c", "/etc/bind/named.conf", "-g", "-u", "named"]
