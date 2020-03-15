@@ -29,8 +29,8 @@
 ! due date : 13 mars 
 ```
 > domaine : wt2-5.ephec-ti.be
-- [ ] concevoir sous-domaine __wt2-5__
-  - [ ] fichier de zone
+- [x] concevoir sous-domaine __wt2-5__
+  - [X] fichier de zone
   - [X] glue records à envoyer au ns parent (professeur) 
     - [ ] envoyé au professeur
 
