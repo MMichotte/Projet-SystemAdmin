@@ -1,5 +1,9 @@
 version: '2'
 
+##############################################
+##       Docker Services Configuration      ##
+##############################################
+
 services:
 
   resolver:
@@ -13,7 +17,7 @@ services:
       local_net:
           ipv4_address: 172.16.0.2
     volumes:
-      - ./Resolver/resolv.conf:/etc/bind/named.conf
+      - ./Resolver/named.conf:/etc/bind/named.conf
     container_name: resolver
 
   database:
@@ -22,7 +26,7 @@ services:
       dockerfile: Dockerfile
     command: --default-authentication-plugin=mysql_native_password
     ports:
-      - "3306:3306"
+      - "5000:3306"
     networks:
       local_net:
           ipv4_address: 172.16.0.5
@@ -41,11 +45,16 @@ services:
       - "443:443"
     networks:
       dmz_net:
-          ipv4_address: 172.16.0.10
+          ipv4_address: 172.16.1.3
     volumes:
-      - ./Web-dmz/httpd.conf:/usr/local/apache2/conf/httpd.conf
-      - ./Web-dmz/sites/:/usr/local/apache2/htdocs/
+      - ./Web-dmz/www/:/var/www/
+      - ./Web-dmz/sites-available/:/etc/apache2/sites-available/
     container_name: web-dmz
+
+    
+##############################################
+##       Docker Networks Configuration      ##
+##############################################
 
 networks:
 
@@ -53,12 +62,12 @@ networks:
       ipam:
           driver: default
           config:
-              - subnet: 172.16.0.0/29
+              - subnet: 172.16.0.0/24
                 gateway:  172.16.0.1
 
   dmz_net:
     ipam:
         driver: default
         config:
-            - subnet: 172.16.0.8/29
-              gateway: 172.16.0.9
+            - subnet: 172.16.1.0/24
+              gateway: 172.16.1.1

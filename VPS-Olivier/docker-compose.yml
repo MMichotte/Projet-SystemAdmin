@@ -1,5 +1,9 @@
 version: '2'
 
+##############################################
+##       Docker Services Configuration      ##
+##############################################
+
 services:
 
   soa-ext:
@@ -10,10 +14,11 @@ services:
       - "53:53"
     networks:
       dmz_net:
-          ipv4_address: 172.16.0.11
+          ipv4_address: 172.16.1.2
     volumes:
-      - ./SOA-ext/named.conf.local:/etc/bind/named.conf
-      - ./SOA-ext/db.wt2-5.ephec-ti.be:/etc/bind/db.wt2-5.ephec-ti.be
+      - ./SOA-ext/named.conf:/etc/bind/named.conf
+      - ./SOA-ext/wt2-5.ephec-ti.be:/etc/bind/wt2-5.ephec-ti.be
+      - ./SOA-ext/194.40.178.51.in-addr.arpa /etc/bind/194.40.178.51.in-addr.arpa
     container_name: soa-ext
   
   #Mail-Imap
@@ -22,20 +27,23 @@ services:
 
 
 
+##############################################
+##       Docker Networks Configuration      ##
+##############################################
+
 networks:
 
   local_net:
       ipam:
           driver: default
           config:
-              - subnet: 172.16.0.0/29
+              - subnet: 172.16.0.0/24
                 gateway:  172.16.0.1
 
   dmz_net:
     ipam:
         driver: default
         config:
-            - subnet: 172.16.0.8/29
-              gateway: 172.16.0.9
-
+            - subnet: 172.16.1.0/24
+              gateway: 172.16.1.1
   

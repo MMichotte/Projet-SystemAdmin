@@ -1,5 +1,9 @@
 version: '2'
 
+##############################################
+##       Docker Services Configuration      ##
+##############################################
+
 services:
 
   soa-in:
@@ -12,8 +16,9 @@ services:
       local_net:
           ipv4_address: 172.16.0.3 
     volumes:
-      - ./SOA-in/named.conf.local:/etc/bind/named.conf
-      - ./SOA-in/interne.db.wt2-5.ephec-ti.be:/etc/bind/interne.db.wt2-5.ephec-ti.be
+      - ./SOA-in/named.conf:/etc/bind/named.conf
+      - ./SOA-in/internal.wt2-5.ephec-ti.be:/etc/bind/internal.wt2-5.ephec-ti.be
+      - ./SOA-in/108.40.178.51.in-addr.arpa:/etc/bind/108.40.178.51.in-addr.arpa
     container_name: soa-in
   
   web-local:
@@ -27,12 +32,15 @@ services:
       local_net:
           ipv4_address: 172.16.0.4
     volumes:
-      - ./Web-local/httpd.conf:/usr/local/apache2/conf/httpd.conf
-      - ./Web-local/sites/:/usr/local/apache2/htdocs/
+      - ./Web-local/www/:/var/www/
+      - ./Web-local/sites-available/:/etc/apache2/sites-available/
     container_name: web-local
 
   #VoIP:
 
+##############################################
+##       Docker Networks Configuration      ##
+##############################################
 
 networks:
 
@@ -40,12 +48,12 @@ networks:
       ipam:
           driver: default
           config:
-              - subnet: 172.16.0.0/29
+              - subnet: 172.16.0.0/24
                 gateway:  172.16.0.1
 
   dmz_net:
     ipam:
         driver: default
         config:
-            - subnet: 172.16.0.8/29
-              gateway: 172.16.0.9
+            - subnet: 172.16.1.0/24
+              gateway: 172.16.1.1
