@@ -1,6 +1,6 @@
 $ORIGIN wt2-5.ephec-ti.be.
 $TTL 604800
-@       IN      SOA     ns.wt2-5.ephec-ti.be. m.valentin.students.ephec.be (
+@       IN      SOA     ns.wt2-5.ephec-ti.be. m.valentin.students.ephec.be. (
                         1           ; Serial
                         604800      ; Refresh
                         86400       ; Retry
@@ -16,7 +16,6 @@ ns          IN      A       51.178.40.194
 ; services web
 b2b         IN      A       51.178.41.120
 www         IN      A       51.178.41.120
-mysql       IN      A       51.178.41.120
 
 ; services mail
 mail        IN      A       51.178.40.194
