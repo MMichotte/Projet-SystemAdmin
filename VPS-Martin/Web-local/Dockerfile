@@ -8,12 +8,15 @@ RUN apt-get install -y iputils-ping
 RUN apt-get install -y nano
 
 # Add the reuired files so that the apahce server can initialize all virtualhosts.
-add ./www/ /var/www/
-add ./sites-available/ /etc/apache2/sites-available/
+ADD ./www/ /var/www/
+ADD ./sites-available/ /etc/apache2/sites-available/
+
+# Security bonus for apache 403 or 404 error
+COPY apache2.conf /etc/apache2/apache2.conf
 
 # Enable the virtulhosts. 
 # ADD NEW VirtualHosts HERE ! 
-run a2ensite intranet.conf
+RUN a2ensite intranet.conf
 
 # Restart the apache service to 'activate' the virtual hosts
-run service apache2 restart
+RUN service apache2 restart
