@@ -9,6 +9,26 @@ DST=('vps-martin@51.178.40.108' 'vps-morgan@51.178.41.120' 'vps-olivier@51.178.4
 METHOD="99"
 TARGET="99"
 
+if [ "$1" == "-h" ]; then
+    echo ""
+    echo ""
+    echo "To use this bash script use the following syntax: "
+    echo ""
+    echo "./.vps.sh <[ssh,scp]?> <name of vps owner (lowercase)> "
+    echo ""
+    echo "examples: "
+    echo ""
+    echo "> To connect with ssh the the 'vps-martin' server run:"
+    echo " ./.vps.sh ssh martin "
+    echo ""
+    echo "> To transfer all files from the local 'VPS-Olivier' directory to the 'vps-olivier' server run :"
+    echo " ./.vps.sh scp olivier "
+    echo ""
+    echo ""
+    exit
+fi
+
+
 for i in "${!ARGS1[@]}"; do
     if [[ "${ARGS1[$i]}" = "$1" ]]; then
         METHOD="${i}";
