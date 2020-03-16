@@ -49,6 +49,7 @@ services:
     volumes:
       - ./Web-dmz/www/:/var/www/
       - ./Web-dmz/sites-available/:/etc/apache2/sites-available/
+      - ./Web-dmz/apache2.conf:/etc/apache2/apache2.conf
     container_name: web-dmz
 
     

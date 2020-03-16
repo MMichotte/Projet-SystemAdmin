@@ -64,7 +64,7 @@ else
         case $yn in
             [Yy]* ) transfer_files ; break;;
             [Nn]* ) exit;;
-            * ) echo "Please answer yes or no.";;
+            * ) echo "Please answer y or n.";;
         esac
     done
 fi
