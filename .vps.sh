@@ -51,16 +51,17 @@ then
     ssh ${DST[$TARGET]}
 else
     transfer_files(){
-    scp -r "./${SRC[$TARGET]}" "${DST[$TARGET]}:woodyToys_services/"
-    echo "--------------------"
-    echo "scp transfer completed!"
+        scp -r "./${SRC[$TARGET]}/" "${DST[$TARGET]}:"
+        echo "--------------------"
+        echo "scp transfer completed!"
+        echo "--------------------"
     }
 
     while true; do
         echo "--------------------"
         echo "WARNING SCP TRANSFER"
         echo "--------------------"
-        read -p "Are you sure you want to copy all files from your local directory '${SRC[$TARGET]}' to the following VPS server : ${DST[$TARGET]} ? [y/n]? " yn 
+        read -p "Are you sure you want to copy/override all files from your local directory '${SRC[$TARGET]}' to the following VPS server : ${DST[$TARGET]} ? [y/n]? " yn 
         case $yn in
             [Yy]* ) transfer_files ; break;;
             [Nn]* ) exit;;
