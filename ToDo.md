@@ -32,7 +32,7 @@
 - [x] concevoir sous-domaine __wt2-5__
   - [X] fichier de zone
   - [X] glue records à envoyer au ns parent (professeur) 
-    - [ ] envoyé au professeur
+    - [X] envoyé au professeur
 
 ### Web
 ```diff
