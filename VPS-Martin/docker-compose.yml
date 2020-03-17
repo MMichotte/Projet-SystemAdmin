@@ -18,7 +18,7 @@ services:
           ipv4_address: 172.16.0.3 
     volumes:
       - ./SOA-in/named.conf:/etc/bind/named.conf
-      - ./SOA-in/internal.wt2-5.ephec-ti.be:/etc/bind/internal.wt2-5.ephec-ti.be
+      - ./SOA-in/intranet.wt2-5.ephec-ti.be:/etc/bind/intranet.wt2-5.ephec-ti.be
       - ./SOA-in/reverse:/etc/bind/reverse
     container_name: soa-in
   
