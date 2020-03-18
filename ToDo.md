@@ -38,9 +38,9 @@
 ```diff
 ! due date : 13 mars 
 ```
-- [ ] __outil ERP web__ accessible uniquement en interne (intranet.wt2-5.ephec-ti.be)
-- [ ] __portail web__ public (www.wt2-5.ephec-ti.be)
-- [ ] __vente en ligne__ accessible revendeurs uniquement (b2b.wt2-5.ephec-ti.be)
+- [X] __outil ERP web__ accessible uniquement en interne (intranet.wt2-5.ephec-ti.be)
+- [X] __portail web__ public (www.wt2-5.ephec-ti.be)
+- [X] __vente en ligne__ accessible revendeurs uniquement (b2b.wt2-5.ephec-ti.be)
 
 ### Sécurité
 - [ ] postes doivent avoir accès au services internes et externes
