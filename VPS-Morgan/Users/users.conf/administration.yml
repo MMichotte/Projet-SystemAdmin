@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+
+  user_administration:
+    build: .
+    networks:
+      administratif_net:
+          ipv4_address: 192.168.1.99
+    container_name: user_administration
+
+networks:
+
+  administratif_net:
+      ipam:
+          driver: default
+          config:
+              - subnet: 192.168.1.0/24
+                gateway:  192.168.1.1

@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+
+  user_direction:
+    build: .
+    networks:
+      direction_net:
+          ipv4_address: 192.168.0.2
+    container_name: user_direction
+
+networks:
+
+  direction_net:
+      ipam:
+          driver: default
+          config:
+              - subnet: 192.168.0.0/24
+                gateway:  192.168.0.1
+
+

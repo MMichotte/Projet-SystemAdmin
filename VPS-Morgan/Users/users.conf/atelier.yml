@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+
+  user_atelier:
+    build: .
+    networks:
+      atelier_net:
+          ipv4_address: 192.168.2.99
+    container_name: user_atelier
+
+networks:
+  
+  atelier_net:
+      ipam:
+          driver: default
+          config:
+              - subnet: 192.168.2.0/24
+                gateway:  192.168.2.1

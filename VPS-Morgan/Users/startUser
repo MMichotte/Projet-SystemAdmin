@@ -1,0 +1,40 @@
+#!/bin/bash
+
+USERS=('admin' 'direction' 'administration' 'atelier')
+
+INDEX="99"
+
+
+if [ "$1" == "-h" ]
+then
+    echo ""
+    echo ""
+    echo " To use this bash script use the following syntax: "
+    echo ""
+    echo " startUser <[admin, direction, administration, atelier?>"
+    echo ""
+    echo " examples: "
+    echo ""
+    echo "> To create and start an admin user: "
+    echo " startUser admin"
+    echo ""
+    echo ""
+    exit
+fi
+
+for i in "${!USERS[@]}"; do
+    if [[ "${USERS[$i]}" = "$1" ]]; then
+        INDEX="${i}";
+    fi
+done
+
+if [ "$INDEX" == "99" ]; then
+    echo "Usage: $1 <[admin, direction, administration, atelier]?>"
+    exit
+fi
+
+docker-compose -f ./users.conf/${USERS[$INDEX]}.yml up -d
+docker exec -it user_${USERS[$INDEX]} bash
+
+
+
