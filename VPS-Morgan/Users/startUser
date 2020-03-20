@@ -33,7 +33,7 @@ if [ "$INDEX" == "99" ]; then
     exit
 fi
 
-docker-compose -f ./users.conf/${USERS[$INDEX]}.yml up -d
+docker-compose -f ~/VPS-Morgan/Users/users.conf/${USERS[$INDEX]}.yml up -d
 docker exec -it user_${USERS[$INDEX]} bash
 
 
