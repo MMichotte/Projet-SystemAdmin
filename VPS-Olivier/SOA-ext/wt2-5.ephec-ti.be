@@ -14,8 +14,8 @@ $TTL 604800
 ns          IN      A       51.178.40.194
 
 ; services web
-b2b         IN      A       51.178.41.120
-www         IN      A       51.178.41.120
+b2b         IN      A       51.178.40.108
+www         IN      A       51.178.40.108
 
 ; services mail
 mail        IN      A       51.178.40.194
