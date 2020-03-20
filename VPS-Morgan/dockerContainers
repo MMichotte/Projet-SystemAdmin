@@ -40,36 +40,42 @@ fi
 if [ "$1" == "start" ]; then
     docker start resolver
     docker start mysql-db
-    docker start web-dmz
+    docker start soa-in
+    docker start web-local
     docker ps -a
 fi
 
 if [ "$1" == "restart" ]; then
     docker restart resolver
     docker restart mysql-db
-    docker restart web-dmz
+    docker restart soa-in
+    docker restart web-local
     docker ps -a
 fi
 
 if [ "$1" == "stop" ]; then
     docker stop resolver
     docker stop mysql-db
-    docker stop web-dmz
+    docker stop soa-in
+    docker stop web-local
     docker ps -a
 fi
 
 if [ "$1" == "delete" ]; then
     docker stop resolver
     docker stop mysql-db
-    docker stop web-dmz
+    docker stop soa-in
+    docker stop web-local
 
     docker rm resolver
     docker rm mysql-db
-    docker rm web-dmz
+    docker rm soa-in
+    docker rm web-local
 
     docker rmi -f vps-morgan_resolver
     docker rmi -f vps-morgan_mysql-db
-    docker rmi -f vps-morgan_web-dmz
+    docker rmi -f vps-morgan_soa-in
+    docker rmi -f vps-morgan_web-local
 
     docker network rm vps-morgan_local_net
     docker network rm vps-morgan_dmz_net

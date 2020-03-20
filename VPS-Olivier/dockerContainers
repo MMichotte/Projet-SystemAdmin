@@ -39,25 +39,37 @@ fi
 
 if [ "$1" == "start" ]; then
     docker start soa-ext
+    #docker start smtp
+    #docker start imap
     docker ps -a
 fi
 
 if [ "$1" == "restart" ]; then
     docker restart soa-ext
+    #docker restart smtp
+    #docker restart imap
     docker ps -a
 fi
 
 if [ "$1" == "stop" ]; then
     docker stop soa-ext
+    #docker stop smtp
+    #docker stop imap
     docker ps -a
 fi
 
 if [ "$1" == "delete" ]; then
     docker stop soa-ext
+    #docker stop smtp
+    #docker stop imap
 
     docker rm soa-ext
+    #docker rm smtp
+    #docker rm imap
 
     docker rmi -f vps-olivier_soa-ext
+    #docker rmi -f vps-olivier_smtp
+    #docker rmi -f vps-olivier_imap
 
     docker network rm vps-olivier_local_net
     docker network rm vps-olivier_dmz_net
