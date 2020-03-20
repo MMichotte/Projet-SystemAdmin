@@ -9,17 +9,17 @@ if [ "$1" == "-h" ]; then
     echo ""
     echo "To use this bash script use the following syntax: "
     echo ""
-    echo "./.dockerContainers.sh <[start, restart, stop, delete]?>"
+    echo " dockerContainers <[start, restart, stop, delete]?>"
     echo ""
     echo "examples: "
     echo ""
     echo "> To stop/start/restart all containers running container belonging to WoodyToys: "
-    echo " ./.dockerContainers.sh stop"
-    echo " ./.dockerContainers.sh start"
-    echo " ./.dockerContainers.sh restart"
+    echo " dockerContainers stop"
+    echo " dockerContainers start"
+    echo " dockerContainers restart"
     echo ""
     echo "> Td delete all created containers and their corresponding images: (belonging to WooodyToys)"
-    echo " ./.dockerContainers.sh delete"
+    echo " dockerContainers.sh delete"
     echo ""
     echo ""
     exit
@@ -38,32 +38,32 @@ if [ "$METHOD" == "99" ]; then
 fi
 
 if [ "$1" == "start" ]; then
-    docker start soa-in
-    docker start web-local
+    docker start web-dmz
+    #docker start voip
     docker ps -a
 fi
 
 if [ "$1" == "restart" ]; then
-    docker restart soa-in
-    docker restart web-local
+    docker restart web-dmz
+    #docker restart voip
     docker ps -a
 fi
 
 if [ "$1" == "stop" ]; then
-    docker stop soa-in
     docker stop web-local
+    #docker stop voip
     docker ps -a
 fi
 
 if [ "$1" == "delete" ]; then
-    docker stop soa-in
     docker stop web-local
+    #docker stop voip
 
-    docker rm soa-in
     docker rm web-local
-
-    docker rmi -f vps-martin_soa-in 
+    #docker rm voip
+ 
     docker rmi -f vps-martin_web-local
+    #docker rmi -f vps-martin_voip
 
     docker network rm vps-martin_local_net
     docker network rm vps-martin_dmz_net

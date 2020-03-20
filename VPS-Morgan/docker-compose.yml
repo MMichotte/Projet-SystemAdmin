@@ -20,6 +20,22 @@ services:
       - ./Resolver/named.conf:/etc/bind/named.conf
     container_name: resolver
 
+  soa-in:
+    build: 
+      context: ./SOA-in
+      dockerfile: Dockerfile
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    networks:
+      local_net:
+          ipv4_address: 172.16.0.3 
+    volumes:
+      - ./SOA-in/named.conf:/etc/bind/named.conf
+      - ./SOA-in/intranet.wt2-5.ephec-ti.be:/etc/bind/intranet.wt2-5.ephec-ti.be
+      - ./SOA-in/reverse:/etc/bind/reverse
+    container_name: soa-in
+
   database:
     build: 
       context: ./Db
@@ -36,21 +52,21 @@ services:
       MYSQL_ROOT_PASSWORD: sysadmin
     container_name: mysql-db
 
-  web-dmz:
+  web-local:
     build:
-      context: ./Web-dmz
+      context: ./Web-local
       dockerfile: Dockerfile
     ports:
       - "80:80"
       - "443:443"
     networks:
-      dmz_net:
-          ipv4_address: 172.16.1.3
+      local_net:
+          ipv4_address: 172.16.0.4
     volumes:
-      - ./Web-dmz/www/:/var/www/
-      - ./Web-dmz/sites-available/:/etc/apache2/sites-available/
-      - ./Web-dmz/apache2.conf:/etc/apache2/apache2.conf
-    container_name: web-dmz
+      - ./Web-local/www/:/var/www/
+      - ./Web-local/sites-available/:/etc/apache2/sites-available/
+      - ./Web-local/apache2.conf:/etc/apache2/apache2.conf
+    container_name: web-local
 
     
 ##############################################

@@ -5,40 +5,25 @@ version: '2'
 ##############################################
 
 services:
-
-  soa-in:
-    build: 
-      context: ./SOA-in
-      dockerfile: Dockerfile
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-    networks:
-      local_net:
-          ipv4_address: 172.16.0.3 
-    volumes:
-      - ./SOA-in/named.conf:/etc/bind/named.conf
-      - ./SOA-in/intranet.wt2-5.ephec-ti.be:/etc/bind/intranet.wt2-5.ephec-ti.be
-      - ./SOA-in/reverse:/etc/bind/reverse
-    container_name: soa-in
   
-  web-local:
+  web-dmz:
     build:
-      context: ./Web-local
+      context: ./Web-dmz
       dockerfile: Dockerfile
     ports:
       - "80:80"
       - "443:443"
     networks:
-      local_net:
-          ipv4_address: 172.16.0.4
+      dmz_net:
+          ipv4_address: 172.16.1.3
     volumes:
-      - ./Web-local/www/:/var/www/
-      - ./Web-local/sites-available/:/etc/apache2/sites-available/
-      - ./Web-local/apache2.conf:/etc/apache2/apache2.conf
-    container_name: web-local
+      - ./Web-dmz/www/:/var/www/
+      - ./Web-dmz/sites-available/:/etc/apache2/sites-available/
+      - ./Web-dmz/apache2.conf:/etc/apache2/apache2.conf
+    container_name: web-dmz
 
   #VoIP:
+
 
 ##############################################
 ##       Docker Networks Configuration      ##
