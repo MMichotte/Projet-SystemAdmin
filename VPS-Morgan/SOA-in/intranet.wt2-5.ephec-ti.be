@@ -11,8 +11,8 @@ $TTL 604800
             IN      NS      ns.intranet.wt2-5.ephec-ti.be.
 
 ; name servers => RR de type A
-ns          IN      A       51.178.40.108
+ns          IN      A       172.16.0.3
 
 ; services web
-erp         IN      A       51.178.40.108
-mysql       IN      A       51.178.41.120
+erp         IN      A       172.16.0.4
+mysql       IN      A       172.16.0.5
