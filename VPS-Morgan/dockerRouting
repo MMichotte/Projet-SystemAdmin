@@ -1,0 +1,63 @@
+#!/bin/bash
+
+
+METHOD='REJECT'
+
+routing(){
+    # Route between docker local_net and direction_net 
+    sudo iptables -I FORWARD -s 172.16.0.0/24 -d 192.168.0.0/24 -j $METHOD
+    sudo iptables -I FORWARD -d 172.16.0.0/24 -s 192.168.0.0/24 -j $METHOD
+
+    # Route between docker local_net and administratif_net 
+    sudo iptables -I FORWARD -s 172.16.0.0/24 -d 192.168.1.0/24 -j $METHOD
+    sudo iptables -I FORWARD -d 172.16.0.0/24 -s 192.168.1.0/24 -j $METHOD
+
+    # Route between docker local_net and atelier_net 
+    sudo iptables -I FORWARD -s 172.16.0.0/24 -d 192.168.2.0/24 -j $METHOD
+    sudo iptables -I FORWARD -d 172.16.0.0/24 -s 192.168.2.0/24 -j $METHOD
+}
+
+delRouting(){
+    sudo iptables -D FORWARD -s 172.16.0.0/24 -d 192.168.0.0/24 -j ACCEPT
+    sudo iptables -D FORWARD -d 172.16.0.0/24 -s 192.168.0.0/24 -j ACCEPT
+    sudo iptables -D FORWARD -s 172.16.0.0/24 -d 192.168.1.0/24 -j ACCEPT
+    sudo iptables -D FORWARD -d 172.16.0.0/24 -s 192.168.1.0/24 -j ACCEPT
+    sudo iptables -D FORWARD -s 172.16.0.0/24 -d 192.168.2.0/24 -j ACCEPT
+    sudo iptables -D FORWARD -d 172.16.0.0/24 -s 192.168.2.0/24 -j ACCEPT
+
+    sudo iptables -D FORWARD -s 172.16.0.0/24 -d 192.168.0.0/24 -j REJECT
+    sudo iptables -D FORWARD -d 172.16.0.0/24 -s 192.168.0.0/24 -j REJECT
+    sudo iptables -D FORWARD -s 172.16.0.0/24 -d 192.168.1.0/24 -j REJECT
+    sudo iptables -D FORWARD -d 172.16.0.0/24 -s 192.168.1.0/24 -j REJECT
+    sudo iptables -D FORWARD -s 172.16.0.0/24 -d 192.168.2.0/24 -j REJECT
+    sudo iptables -D FORWARD -d 172.16.0.0/24 -s 192.168.2.0/24 -j REJECT
+}
+
+
+if [ $1 = 'enable' ]
+then 
+    delRouting
+    METHOD='ACCEPT'
+    routing
+    sudo iptables -S
+    echo ""
+    echo "all routes are enabled"
+    echo ""
+
+elif [ $1 = 'disable' ]
+then 
+    delRouting
+    METHOD='REJECT'
+    routing
+    sudo iptables -S
+    echo ""
+    echo "all routes are disabled"
+    echo ""
+
+else
+    echo "Missing parameter : <enable,disanle> "
+    exit
+fi
+
+
+
