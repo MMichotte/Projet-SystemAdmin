@@ -103,12 +103,10 @@
 * rapport sur ce qui a été déployé 
 > max 4-5 pages
 
-### Rapport technique 
--> //TODO  
+### Rapport technique  
 > max 2-3 pages 
 
 ### Analyse de la sécurité 
--> //TODO
 > max 3-4 pages
 
 ### Wiki github 
