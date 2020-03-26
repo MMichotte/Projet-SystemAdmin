@@ -22,9 +22,35 @@ services:
       - ./SOA-ext/reverse:/etc/bind/reverse
     container_name: soa-ext
   
-  #Mail-Imap
+  mail:
+    build: 
+      context: ./Mail
+      dockerfile: Dockerfile
+    ports:
+    - "25:25"
+    - "143:143"
+    - "587:587"
+    - "993:993"
+    networks:
+      dmz_net:
+          ipv4_address: 172.16.1.6
+    volumes:
+    - ./Mail/logs/maildata:/var/mail
+    - ./Mail/logs/mailstate:/var/mail-state
+    - ./Mail/logs/maillogs:/var/log/mail
+    - ./Mail/config/:/tmp/docker-mailserver/
+    env_file:
+    - ./Mail/dockerConfig/.env
+    - ./Mail/dockerConfig/env-mailserver
+    cap_add:
+    - NET_ADMIN
+    - SYS_PTRACE
+    restart: always
+    hostname: mail
+    domainname: wt2-5.ephec-ti.be
+    container_name: mail
 
-  #Mail-Smtp
+    
 
 
 

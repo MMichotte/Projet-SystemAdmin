@@ -1,0 +1,87 @@
+Mar 26 14:52:24 mail dovecot: master: Dovecot v2.3.10 (0da0eff44) starting up for imap, lmtp (core dumps disabled)
+Mar 26 14:52:24 mail opendkim[137]: OpenDKIM Filter v2.11.0 starting (args: -f)
+Mar 26 14:52:25 mail opendmarc[144]: OpenDMARC Filter v1.3.2 starting (args: -f -p inet:8893@localhost -P /var/run/opendmarc/opendmarc.pid)
+Mar 26 14:52:25 mail opendmarc[144]: additional trusted authentication services: mail.wt2-5.ephec-ti.be
+Mar 26 14:52:26 mail amavis[360]: starting. /usr/sbin/amavisd-new at mail.wt2-5.ephec-ti.be amavisd-new-2.10.1 (20141025), Unicode aware
+Mar 26 14:52:26 mail amavis[360]: Net::Server: Group Not Defined.  Defaulting to EGID '111 111'
+Mar 26 14:52:26 mail amavis[360]: Net::Server: User Not Defined.  Defaulting to EUID '109'
+Mar 26 14:52:26 mail amavis[360]: Module Amavis::Conf        2.404
+Mar 26 14:52:26 mail amavis[360]: Module Archive::Zip        1.59
+Mar 26 14:52:26 mail amavis[360]: Module BerkeleyDB          0.55
+Mar 26 14:52:26 mail amavis[360]: Module Compress::Raw::Zlib 2.069
+Mar 26 14:52:26 mail amavis[360]: Module Compress::Zlib      2.069001
+Mar 26 14:52:26 mail amavis[360]: Module Digest::MD5         2.54
+Mar 26 14:52:26 mail amavis[360]: Module Encode              2.80_01
+Mar 26 14:52:26 mail amavis[360]: Module File::Temp          0.2304
+Mar 26 14:52:26 mail amavis[360]: Module IO::Socket::IP      0.37
+Mar 26 14:52:26 mail amavis[360]: Module MIME::Entity        5.508
+Mar 26 14:52:26 mail amavis[360]: Module MIME::Parser        5.508
+Mar 26 14:52:26 mail amavis[360]: Module MIME::Tools         5.508
+Mar 26 14:52:26 mail amavis[360]: Module Mail::Header        2.18
+Mar 26 14:52:26 mail amavis[360]: Module Mail::Internet      2.18
+Mar 26 14:52:26 mail amavis[360]: Module Net::LibIDN         0.12
+Mar 26 14:52:26 mail amavis[360]: Module Net::Server         2.008
+Mar 26 14:52:26 mail amavis[360]: Module Scalar::Util        1.4202
+Mar 26 14:52:26 mail amavis[360]: Module Socket              2.020_03
+Mar 26 14:52:26 mail amavis[360]: Module Time::HiRes         1.9733
+Mar 26 14:52:26 mail amavis[360]: Module Unix::Syslog        1.1
+Mar 26 14:52:26 mail amavis[360]: Amavis::ZMQ code     NOT loaded
+Mar 26 14:52:26 mail amavis[360]: Amavis::DB code      loaded
+Mar 26 14:52:26 mail amavis[360]: SQL base code        NOT loaded
+Mar 26 14:52:26 mail amavis[360]: SQL::Log code        NOT loaded
+Mar 26 14:52:26 mail amavis[360]: SQL::Quarantine      NOT loaded
+Mar 26 14:52:26 mail amavis[360]: Lookup::SQL code     NOT loaded
+Mar 26 14:52:26 mail amavis[360]: Lookup::LDAP code    NOT loaded
+Mar 26 14:52:26 mail amavis[360]: AM.PDP-in proto code loaded
+Mar 26 14:52:26 mail amavis[360]: SMTP-in proto code   loaded
+Mar 26 14:52:26 mail amavis[360]: Courier proto code   NOT loaded
+Mar 26 14:52:26 mail amavis[360]: SMTP-out proto code  loaded
+Mar 26 14:52:26 mail amavis[360]: Pipe-out proto code  NOT loaded
+Mar 26 14:52:26 mail amavis[360]: BSMTP-out proto code NOT loaded
+Mar 26 14:52:26 mail amavis[360]: Local-out proto code loaded
+Mar 26 14:52:26 mail amavis[360]: OS_Fingerprint code  NOT loaded
+Mar 26 14:52:26 mail amavis[360]: ANTI-VIRUS code      NOT loaded
+Mar 26 14:52:26 mail amavis[360]: ANTI-SPAM code       NOT loaded
+Mar 26 14:52:26 mail amavis[360]: ANTI-SPAM-EXT code   NOT loaded
+Mar 26 14:52:26 mail amavis[360]: ANTI-SPAM-C code     NOT loaded
+Mar 26 14:52:26 mail amavis[360]: ANTI-SPAM-SA code    NOT loaded
+Mar 26 14:52:26 mail amavis[360]: Unpackers code       loaded
+Mar 26 14:52:26 mail amavis[360]: DKIM code            NOT loaded
+Mar 26 14:52:26 mail amavis[360]: Tools code           NOT loaded
+Mar 26 14:52:26 mail amavis[360]: Found $file            at /usr/bin/file
+Mar 26 14:52:26 mail amavis[360]: No $altermime,         not using it
+Mar 26 14:52:26 mail amavis[360]: Internal decoder for .mail
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .Z    at /bin/uncompress
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .gz   at /bin/gzip -d
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .bz2  at /bin/bzip2 -d
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .xz   at /usr/bin/xz -dc
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .lzma at /usr/bin/xz -dc --format=lzma
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .lrz  at /usr/bin/lrzip -q -k -d -o -
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .lzo  at /usr/bin/lzop -d
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .lz4  at /usr/bin/lz4c -d
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .rpm  at /usr/bin/rpm2cpio
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .cpio at /bin/pax
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .tar  at /bin/pax
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .deb  at /usr/bin/ar
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .rar  at /usr/bin/unrar-free
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .arj  at /usr/bin/arj
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .arc  at /usr/bin/nomarch
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .zoo  at /usr/bin/zoo
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .doc  at /usr/bin/ripole
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .cab  at /usr/bin/cabextract
+Mar 26 14:52:26 mail amavis[360]: Internal decoder for .tnef
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .zip  at /usr/bin/7za
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .kmz  at /usr/bin/7za
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .7z   at /usr/bin/7zr
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .jar  at /usr/bin/7z
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .swf  at /usr/bin/7z
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .lha  at /usr/bin/7z
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .iso  at /usr/bin/7z
+Mar 26 14:52:26 mail amavis[360]: Found decoder for    .exe  at /usr/bin/unrar-free; /usr/bin/arj
+Mar 26 14:52:26 mail amavis[360]: No decoder for       .F   
+Mar 26 14:52:26 mail amavis[360]: Deleting db files  in /var/lib/amavis/db
+Mar 26 14:52:26 mail amavis[360]: Creating db in /var/lib/amavis/db/; BerkeleyDB 0.55, libdb 5.3
+Mar 26 14:52:27 mail postfix/master[901]: daemon started -- version 3.1.14, configuration /etc/postfix
+Mar 26 14:52:34 mail dovecot: master: Warning: Killed with signal 15 (by pid=1 uid=0 code=kill)
+Mar 26 14:52:40 mail opendmarc[144]: OpenDMARC Filter: mi_stop=1
+Mar 26 14:52:40 mail opendmarc[144]: OpenDMARC Filter v1.3.2 terminating with status 0, errno = 0
