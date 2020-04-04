@@ -1,11 +1,15 @@
 FROM ubuntu
 RUN apt-get update -y
 
-# Outils utils
+# Outils pour modifier / tester des configs
 RUN apt-get install -y vim nano
 RUN apt-get install -y dnsutils net-tools iputils-ping
 
-# Package principaux
+# Package principaux :
+# postfix => SMTP (envoie et reception de mail)
+# Dovecot => IMAP (transfert les mails aux clients)
+# mutt => Client mail (Comme Gmail mais en ligne de commande)
+# openssl => Pour la sécurité
 RUN apt-get install -y postfix mailutils dovecot-imapd openssl mutt
 
 RUN groupadd -g 5000 vmail
