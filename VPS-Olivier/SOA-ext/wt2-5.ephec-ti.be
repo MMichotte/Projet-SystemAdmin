@@ -7,17 +7,15 @@ $TTL 604800
                         2419200     ; Expire
                         604800 )    ; Negative Cache TTL
 ;
-; name servers => RR de type NS
+; NS configs
             IN      NS      ns.wt2-5.ephec-ti.be.
-
-; name servers => RR de type A
+            IN      MX  10  mail
 ns          IN      A       51.178.40.194
 
-; services web
+; Web
 b2b         IN      A       51.178.40.108
 www         IN      A       51.178.40.108
 
-; services mail
+; Mail
 mail        IN      A       51.178.40.194
 smtp        IN      CNAME   mail
-imap        IN      CNAME   mail
