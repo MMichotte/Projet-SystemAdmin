@@ -21,20 +21,17 @@ services:
       - ./SOA-ext/wt2-5.ephec-ti.be:/etc/bind/wt2-5.ephec-ti.be
       - ./SOA-ext/reverse:/etc/bind/reverse
     container_name: soa-ext
-  
+
   mail:
     build: 
       context: ./Mail
       dockerfile: Dockerfile
-    ports:
-    - "25:25"
     networks:
       dmz_net:
           ipv4_address: 172.16.1.6
-    volumes:
-      - ./config-postfix/:/etc/config-postfix/
+    environment:
+      MYSQL_ROOT_PASSWORD: root
     hostname: mail
-    domainname: wt2-5.ephec-ti.be
     container_name: mail
 
 ##############################################
@@ -42,13 +39,6 @@ services:
 ##############################################
 
 networks:
-
-  local_net:
-      ipam:
-          driver: default
-          config:
-              - subnet: 172.16.0.0/24
-                gateway:  172.16.0.1
 
   dmz_net:
     ipam:

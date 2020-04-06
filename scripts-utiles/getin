@@ -1,5 +1,5 @@
 #!/bin/bash
-printf "Getting in container \033[0;31m $1 ... \033[0m"
+printf "Getting in container \033[0;31m$1\033[0m by\033[0;34m bash\033[0m..."
+echo ""
+sleep 1
 docker exec -it $1 bash
-clear
-docker exec -it $1 sh
