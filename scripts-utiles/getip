@@ -1,0 +1,3 @@
+#!/bin/sh
+printf "The ip of container ${1} is => \033[0;31m " 
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
