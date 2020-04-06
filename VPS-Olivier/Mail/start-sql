@@ -1,0 +1,5 @@
+#!/bin/bash
+printf "Getting in container \033[0;31m $1 ... \033[0m"
+docker exec -it $1 bash
+clear
+docker exec -it $1 sh
