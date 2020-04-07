@@ -27,6 +27,7 @@ RUN groupadd -g 5000 vhosts
 RUN useradd -g vhosts -u 5000 vhosts -d /var/mail/vhosts -s /bin/false -m
 
 COPY config-postfix/main.cf /etc/postfix/main.cf
+COPY config-postfix/master.cf /etc/postfix/master.cf
 COPY config-postfix/generic /etc/postfix/generic
 COPY config-postfix/mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
 COPY config-postfix/mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
@@ -44,6 +45,7 @@ COPY config-dovecot/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
 COPY config-dovecot/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
 COPY config-dovecot/10-master.conf /etc/dovecot/conf.d/10-master.conf
 COPY config-dovecot/auth-sql.conf.ext /etc/dovecot/conf.d/auth-sql.conf.ext
+COPY config-dovecot/10-ssl.conf /etc/dovecot/10-ssl.conf
 
 #EXPOSE 25 143
 
