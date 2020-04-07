@@ -5,14 +5,13 @@ readme_directory = no
 compatibility_level = 2
 
 # SSL - Security
-smtpd_tls_cert_file=ssl-keys/cert2.pem
-smtpd_tls_key_file=ssl-keys/privkey2.pem
+smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
 smtpd_use_tls=yes
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 
 # Main configs
-
 smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
 myhostname = mail.wt2-5.ephec-ti.be
 mydomain = wt2-5.ephec-ti.be

@@ -1,10 +1,10 @@
-create database messagerie;
+create database maildb;
 
-GRANT ALL PRIVILEGES ON messagerie.* to 'messagerieUser'@'localhost' identified by 'openclassrooms';
+GRANT ALL PRIVILEGES ON maildb.* to 'mailUser'@'localhost' identified by 'root';
 
 FLUSH PRIVILEGES;
 
-use messagerie;
+use maildb;
 
 CREATE TABLE `virtual_domains` (
 `id` INT NOT NULL AUTO_INCREMENT,
