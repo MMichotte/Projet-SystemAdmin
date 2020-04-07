@@ -9,6 +9,9 @@ RUN apt-get install -y dnsutils net-tools iputils-ping mailutils
 COPY config-postfix/readmail /usr/bin/readmail
 RUN chmod +x /usr/bin/readmail
 
+# Permet de générer un certificat SSL
+RUN openssl req -new -x509 -days 3650 -nodes -newkey rsa:4096 -out /etc/ssl/certs/mailserver.pem -keyout /etc/ssl/private/mailserver.pem -subj "/C=BE/ST=Braban-wallon/L=Wavre/O=Ephec/OU=IT/CN=mail.wt2-5.ephec-ti.be"
+
 # Installation - Mariadb (base de données sql)
 RUN apt-get install -y mariadb-server
 
@@ -23,7 +26,6 @@ RUN apt-get install -y postfix postfix-mysql
 RUN groupadd -g 5000 vhosts
 RUN useradd -g vhosts -u 5000 vhosts -d /var/mail/vhosts -s /bin/false -m
 
-COPY ssl-keys/ ssl-keys/
 COPY config-postfix/main.cf /etc/postfix/main.cf
 COPY config-postfix/generic /etc/postfix/generic
 COPY config-postfix/mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
