@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 RUN apt-get update -y
 
 # Outils pour modifier / tester des configs

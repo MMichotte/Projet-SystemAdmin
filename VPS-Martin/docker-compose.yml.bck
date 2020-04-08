@@ -6,35 +6,23 @@ version: '2'
 
 services:
   
-  #web-dmz:
-  #  build:
-  #    context: ./Web-dmz
-  #    dockerfile: Dockerfile
-  #  ports:
-  #    - "80:80"
-  #   - "443:443"
-  #  networks:
-  #    dmz_net:
-  #        ipv4_address: 172.16.1.3
-  #  volumes:
-  #    - ./Web-dmz/www/:/var/www/
-  #    - ./Web-dmz/sites-available/:/etc/apache2/sites-available/
-  #    - ./Web-dmz/apache2.conf:/etc/apache2/apache2.conf
-  #  container_name: web-dmz
-
-  voip:
+  web-dmz:
     build:
-      context: ./VoIP
+      context: ./Web-dmz
       dockerfile: Dockerfile
     ports:
-      - "5060:5060/udp"
-      #- "10000-20000:10000-20000"
+      - "80:80"
+      - "443:443"
     networks:
       dmz_net:
-          ipv4_address: 172.16.1.5
+          ipv4_address: 172.16.1.3
     volumes:
-      - ./voIP/config/asterisk:/etc/asterisk/
-    container_name: voip
+      - ./Web-dmz/www/:/var/www/
+      - ./Web-dmz/sites-available/:/etc/apache2/sites-available/
+      - ./Web-dmz/apache2.conf:/etc/apache2/apache2.conf
+    container_name: web-dmz
+
+  #VoIP:
 
 
 ##############################################
