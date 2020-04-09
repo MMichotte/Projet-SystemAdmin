@@ -49,7 +49,7 @@ RUN postmap /etc/postfix/vmailbox
 # |Installation - Dovecot (IMAP)|
 #  -----------------------------
 RUN apt-get install -y dovecot-core dovecot-imapd dovecot-mysql
-
+RUN apt-get install -y dovecot-sieve dovecot-managesieved
 #  ------------------------------
 # |Configuration - Dovecot (IMAP)|
 #  ------------------------------
@@ -61,7 +61,24 @@ COPY config-dovecot/10-master.conf /etc/dovecot/conf.d/10-master.conf
 COPY config-dovecot/auth-sql.conf.ext /etc/dovecot/conf.d/auth-sql.conf.ext
 COPY config-dovecot/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
 
+COPY config-dovecot/20-lmtp.conf /etc/dovecot/conf.d/20-lmtp.conf
+COPY config-dovecot/default.sieve /var/lib/dovecot/sieve/default.sieve
+RUN sievec /var/lib/dovecot/sieve/default.sieve
+RUN chown -R vhosts:vhosts /var/lib/dovecot/sieve/*
+RUN chmod a+x /var/lib/dovecot
+
+#  ---------------------------
+# |Installation - Spamassassin|
+#  ---------------------------
+RUN apt-get install -y spamassassin spamc
+RUN groupadd spamd
+RUN useradd -g spamd -s /bin/false -d /var/log/spamassassin spamd
+RUN mkdir /var/log/spamassassin
+RUN chown spamd:spamd /var/log/spamassassin
+COPY config-spamassassin/spamassassin /etc/default/spamassassin
+COPY config-spamassassin/local.cf /etc/spamassassin/local.cf
+
 #  --------------------------------------------------------
 # |Demare le conteneur docker et execute quelques commandes|
 #  --------------------------------------------------------
-CMD ["sh", "-c", "service mysql start; mysql -u root < config-sql/create-db.sql; mysql -u root < config-sql/create-users.sql; sed -ie 's/x@x/'$(echo $(whoami)@$(hostname))'/' /etc/postfix/generic; postmap /etc/postfix/generic; service postfix start; service dovecot start; tail -F /var/log/mail.log"]
+CMD ["sh", "-c", "service mysql start; mysql -u root < config-sql/create-db.sql; mysql -u root < config-sql/create-users.sql; sed -ie 's/x@x/'$(echo $(whoami)@$(hostname))'/' /etc/postfix/generic; postmap /etc/postfix/generic; service postfix start; service spamassassin start; service dovecot start; tail -F /var/log/mail.log"]
