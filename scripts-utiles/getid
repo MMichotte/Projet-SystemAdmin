@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#  -------------------------------------------------------
+# |Gets the container id based on the given container name|
+#  -------------------------------------------------------
+
+if [ $# -eq 0 ]; then
+    echo "no arguments"
+    exit 1
+else
+docker inspect --format="{{.Id}}" $1
+fi
