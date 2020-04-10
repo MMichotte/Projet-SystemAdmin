@@ -1,3 +1,8 @@
 #!/bin/sh
+
+#  --------------------------------
+# |Get the ip of a docker container|
+#  --------------------------------
+
 printf "The ip of container ${1} is => \033[0;31m " 
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
