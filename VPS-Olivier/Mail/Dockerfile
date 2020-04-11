@@ -9,8 +9,8 @@ RUN apt-get install -y vim nano telnet mutt dnsutils net-tools iputils-ping mail
 #  ------------
 # |Petit Script|
 #  ------------
-COPY config-postfix/readmail /usr/bin/readmail
-RUN chmod +x /usr/bin/readmail
+RUN chmod +x script-mail/*
+COPY script-mail/* /usr/bin/
 
 #  -----------------------------------
 # |Permet de générer un certificat SSL|
