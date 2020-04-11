@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# Script permettant de configurer UFW en fonction du vps (Morgan-Martin-Olivier)
+#  ---------------------------------------------------------
+# |Configurer UFW en fonction du vps (Morgan-Martin-Olivier)|
+#  ---------------------------------------------------------
 
 # Colors - code (Red-Blue-Orange-No color)
 R="\033[0;31m"

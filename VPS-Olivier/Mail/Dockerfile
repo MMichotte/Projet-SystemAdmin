@@ -50,6 +50,7 @@ RUN postmap /etc/postfix/vmailbox
 #  -----------------------------
 RUN apt-get install -y dovecot-core dovecot-imapd dovecot-mysql
 RUN apt-get install -y dovecot-sieve dovecot-managesieved
+
 #  ------------------------------
 # |Configuration - Dovecot (IMAP)|
 #  ------------------------------
