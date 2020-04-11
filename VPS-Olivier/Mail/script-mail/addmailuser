@@ -66,8 +66,8 @@ echo "script.sql created"
 mysql -u root <<MY_QUERY
 SOURCE script.sql
 MY_QUERY
-echo "SQL OK"
 echo "SQL check (pour voir si bien été add) :"
+sleep 1
 # SQL affiche les id et emails de la db
 show=$(mysql -u root -t <<MY_QUERY
 USE maildb
