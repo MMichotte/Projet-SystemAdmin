@@ -21,9 +21,14 @@ VALUES
 INSERT INTO `maildb`.`virtual_users`
 (`id`, `domain_id`, `password` , `email`, `maildir`)
 VALUES
-('4', '1', ENCRYPT('b2b007', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), 'b2b@wt2-5.ephec-ti.be', 'wt2-5.ephec-ti.be/commerciaux/');
+('4', '1', ENCRYPT('b2b007', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), 'b2b@wt2-5.ephec-ti.be', 'wt2-5.ephec-ti.be/b2b/');
 
 INSERT INTO `maildb`.`virtual_users`
 (`id`, `domain_id`, `password` , `email`, `maildir`)
 VALUES
-('5', '1', ENCRYPT('contact007', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), 'contact@wt2-5.ephec-ti.be', 'wt2-5.ephec-ti.be/secretaria/');
+('5', '1', ENCRYPT('contact007', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), 'contact@wt2-5.ephec-ti.be', 'wt2-5.ephec-ti.be/contact/');
+
+INSERT INTO `maildb`.`virtual_users`
+(`id`, `domain_id`, `password` , `email`, `maildir`)
+VALUES
+('6', '1', ENCRYPT('contact007', CONCAT('$6$', SUBSTRING(SHA(RAND()), -16))), 'directeur@wt2-5.ephec-ti.be', 'wt2-5.ephec-ti.be/directeur/');

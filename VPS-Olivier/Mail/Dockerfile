@@ -47,6 +47,7 @@ COPY config-postfix/mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-
 COPY config-postfix/mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
 COPY config-postfix/vmailbox /etc/postfix/vmailbox
 RUN postmap /etc/postfix/vmailbox
+RUN postmap /etc/postfix/generic
 
 #  -----------------------------
 # |Installation - Dovecot (IMAP)|
@@ -85,4 +86,4 @@ COPY config-spamassassin/local.cf /etc/spamassassin/local.cf
 #  --------------------------------------------------------
 # |Demare le conteneur docker et execute quelques commandes|
 #  --------------------------------------------------------
-CMD ["sh", "-c", "service mysql start; mysql -u root < config-sql/create-db.sql; mysql -u root < config-sql/create-users.sql; sed -ie 's/x@x/'$(echo $(whoami)@$(hostname))'/' /etc/postfix/generic; postmap /etc/postfix/generic; service postfix start; service spamassassin start; service dovecot start; tail -F /var/log/mail.log"]
+CMD ["sh", "-c", "service mysql start; mysql -u root < config-sql/create-db.sql; mysql -u root < config-sql/create-users.sql; service postfix start; service spamassassin start; service dovecot start; tail -F /var/log/mail.log"]
