@@ -1,4 +1,6 @@
 # ------------------------------
 # |Files / Repos ignored by git|
 # ------------------------------
-update.txt
+partageDeFichiers.txt
+sambaClient
+sambaServeur

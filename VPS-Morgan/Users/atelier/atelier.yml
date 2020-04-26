@@ -7,6 +7,7 @@ services:
     networks:
       atelier_net:
           ipv4_address: 192.168.2.99
+    hostname: wt2-5
     container_name: user_atelier
 
 networks:
