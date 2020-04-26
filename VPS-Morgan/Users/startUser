@@ -34,7 +34,6 @@ if [ "$INDEX" == "99" ]; then
 fi
 
 docker-compose -f ~/VPS-Morgan/Users/${USERS[$INDEX]}/${USERS[$INDEX]}.yml up -d
-docker exec -it user_${USERS[$INDEX]} bash
-
-
-
+echo "user_${USERS[$INDEX]} created successfully"
+docker exec -it user_${USERS[$INDEX]} sh -c "echo nameserver 172.16.0.2 > /etc/resolv.conf"
+echo "DNS Ok"

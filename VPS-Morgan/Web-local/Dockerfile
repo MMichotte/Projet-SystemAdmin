@@ -14,7 +14,7 @@ RUN apt-get install -y software-properties-common
 RUN apt-get install -y python-certbot-apache
 
 # Creates a self made ssl certificate
-RUN sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt -subj "/C=BE/ST=Braban-wallon/L=Wavre/O=Ephec/OU=IT/CN=erp.wt2-5.ephec-ti.be"
 
 # Add the reuired files so that the apahce server can initialize all virtualhosts.
 ADD ./www/ /var/www/
@@ -32,5 +32,4 @@ RUN a2enmod headers
 RUN a2enmod rewrite
 
 # Restart the apache service to 'activate' the virtual hosts
-RUN service apache2 reload
 RUN service apache2 restart
