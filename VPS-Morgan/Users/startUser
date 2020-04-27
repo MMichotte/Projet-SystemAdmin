@@ -37,3 +37,5 @@ docker-compose -f ~/VPS-Morgan/Users/${USERS[$INDEX]}/${USERS[$INDEX]}.yml up -d
 echo "user_${USERS[$INDEX]} created successfully"
 docker exec -it --user root user_${USERS[$INDEX]} sh -c "echo nameserver 172.16.0.2 > /etc/resolv.conf"
 echo "DNS Ok"
+sh /home/vps-morgan/VPS-Morgan/dockerRouting enable
+echo "Done !"
