@@ -1,0 +1,15 @@
+Changement de la structure de fichier pour les clients.
+
+Update :
+
+1) Chaque client (atelier,direction,administration) est un VRAI client.
+    => Logging en tant que "atelier" à la place de "root"
+    => Permet de restraindre les "capacités" des clients.
+
+2) UI improved
+    => Chaque client dispose d'un terminal plus beau.
+
+3) Script "startUser" updated afin de mettre en place les nouvelles fonctionnalités.
+
+Rappel : ./startUser atelier => Va créer le user atelier "user_atelier"
+        Et puis "getin user_atelier" pour accéder à son terminal. 
