@@ -6,7 +6,8 @@ services:
     build: .
     networks:
       direction_net:
-          ipv4_address: 192.168.0.2
+          ipv4_address: 192.168.0.99
+    hostname: wt2-5
     container_name: user_direction
 
 networks:
@@ -17,5 +18,3 @@ networks:
           config:
               - subnet: 192.168.0.0/24
                 gateway:  192.168.0.1
-
-

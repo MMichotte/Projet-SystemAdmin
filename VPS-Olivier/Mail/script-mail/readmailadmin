@@ -1,0 +1,59 @@
+#!/bin/bash
+
+#  -------------------------------------------
+# |Lance le client mail "mutt" pour les admins|
+#  -------------------------------------------
+
+R="\033[0;31m"
+B="\033[0;34m"
+O="\033[0;33m"
+N="\033[0m"
+
+if [ $# -eq 0 ]; then
+    echo "No arguments provided"
+    echo "entrer soit morgan, martin ou olivier"
+    echo "(permet d'acceder aux boites mails)"
+    exit 1
+
+elif [ $1 = "morgan" ] 
+then
+        if [ -d "/var/mail/vhosts/wt2-5.ephec-ti.be/morgan/" ]
+        then
+                printf "local mail user$B found$N, connecting...\n"
+                sleep 1
+                mutt -f /var/mail/vhosts/wt2-5.ephec-ti.be/morgan/
+        else
+                printf "local mail user$R not found$N, connecting to remote mail server...\n"
+                printf "PS: Your username is :$O morgan@wt2-5.ephec-ti.be$N\n"
+                sleep 2
+                mutt -f imaps://51.178.40.194:993
+        fi
+
+elif [ $1 = "martin" ]
+then
+        if [ -d "/var/mail/vhosts/wt2-5.ephec-ti.be/martin/" ]
+        then
+                printf "local mail user$B found$N, connecting...\n"
+                sleep 1
+                mutt -f /var/mail/vhosts/wt2-5.ephec-ti.be/martin/
+        else
+                printf "local mail user$R not found$N, connecting to remote mail server...\n"
+                printf "PS: Your username is :$O martin@wt2-5.ephec-ti.be$N\n"
+                sleep 2
+                mutt -f imaps://51.178.40.194:993
+        fi
+
+elif [ $1 = "olivier" ]
+then
+        if [ -d "/var/mail/vhosts/wt2-5.ephec-ti.be/olivier/" ]
+        then
+                printf "local mail user$B found$N, connecting...\n"
+                sleep 1
+                mutt -f /var/mail/vhosts/wt2-5.ephec-ti.be/olivier/
+        else
+                printf "local mail user$R not found$N, connecting to remote mail server...\n"
+                printf "PS: Your username is :$O olivier@wt2-5.ephec-ti.be$N\n"
+                sleep 2
+                mutt -f imaps://51.178.40.194:993
+        fi
+fi

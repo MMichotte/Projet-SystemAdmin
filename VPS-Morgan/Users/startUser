@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERS=('admin' 'direction' 'administration' 'atelier')
+USERS=('direction' 'administration' 'atelier')
 
 INDEX="99"
 
@@ -11,7 +11,7 @@ then
     echo ""
     echo " To use this bash script use the following syntax: "
     echo ""
-    echo " startUser <[admin, direction, administration, atelier?>"
+    echo " startUser <[direction, administration, atelier]?>"
     echo ""
     echo " examples: "
     echo ""
@@ -29,12 +29,13 @@ for i in "${!USERS[@]}"; do
 done
 
 if [ "$INDEX" == "99" ]; then
-    echo "Usage: $1 <[admin, direction, administration, atelier]?>"
+    echo "Usage: $1 <[direction, administration, atelier]?>"
     exit
 fi
 
-docker-compose -f ~/VPS-Morgan/Users/users.conf/${USERS[$INDEX]}.yml up -d
-docker exec -it user_${USERS[$INDEX]} bash
-
-
-
+docker-compose -f ~/VPS-Morgan/Users/${USERS[$INDEX]}/${USERS[$INDEX]}.yml up -d
+echo "user_${USERS[$INDEX]} created successfully"
+docker exec -it --user root user_${USERS[$INDEX]} sh -c "echo nameserver 172.16.0.2 > /etc/resolv.conf"
+echo "DNS Ok"
+sh /home/vps-morgan/VPS-Morgan/dockerRouting enable
+echo "Done !"

@@ -12,6 +12,9 @@ $TTL 604800
             IN      MX  10  mail
 ns          IN      A       51.178.40.194
 
+; SPF
+@           IN	    TXT     "v=spf1 a mx ip4:51.178.40.194 include:_spf.google.com ~all"
+
 ; Web
 b2b         IN      A       51.178.40.108
 www         IN      A       51.178.40.108
