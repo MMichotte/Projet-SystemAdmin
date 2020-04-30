@@ -6,21 +6,21 @@ version: '2'
 
 services:
   
-  #web-dmz:
-  #  build:
-  #    context: ./Web-dmz
-  #    dockerfile: Dockerfile
-  #  ports:
-  #    - "80:80"
-  #   - "443:443"
-  #  networks:
-  #    dmz_net:
-  #        ipv4_address: 172.16.1.3
-  #  volumes:
-  #    - ./Web-dmz/www/:/var/www/
-  #    - ./Web-dmz/sites-available/:/etc/apache2/sites-available/
-  #    - ./Web-dmz/apache2.conf:/etc/apache2/apache2.conf
-  #  container_name: web-dmz
+  web-dmz:
+    build:
+      context: ./Web-dmz
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+     - "443:443"
+    networks:
+      dmz_net:
+          ipv4_address: 172.16.1.3
+    volumes:
+      - ./Web-dmz/www/:/var/www/
+      - ./Web-dmz/sites-available/:/etc/apache2/sites-available/
+      - ./Web-dmz/apache2.conf:/etc/apache2/apache2.conf
+    container_name: web-dmz
 
   voip:
     build:
