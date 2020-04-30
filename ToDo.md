@@ -38,9 +38,9 @@
 ```diff
 ! due date : 13 mars 
 ```
-- [X] __outil ERP web__ accessible uniquement en interne (intranet.wt2-5.ephec-ti.be)
+- [X] __outil ERP web__ accessible uniquement en interne (erp.intranet.wt2-5.ephec-ti.be)
 - [X] __portail web__ public (www.wt2-5.ephec-ti.be)
-- [ ] __vente en ligne__ accessible revendeurs uniquement (b2b.wt2-5.ephec-ti.be)
+- [x] __vente en ligne__ accessible revendeurs uniquement (b2b.wt2-5.ephec-ti.be)
 
 ### Sécurité
 - [ ] postes doivent avoir accès au services internes et externes
@@ -51,11 +51,11 @@
 ```diff
 ! due date : 27 mars 
 ```
-- [ ] __email employé__ : nom.prenome@woodytoys.be
-  - [ ] recevoir & envoyer via client mail classique (pas webmail interne) 
-  - [ ] recevoir & envoyer en déplacement ou à domicile 
-- [ ] __secrétaire__ : contact@woodytoys.be
-- [ ] __commerciaux__ : b2b@woodytoys.be
+- [x] __email employé__ : nom.prenome@woodytoys.be
+  - [x] recevoir & envoyer via client mail classique (pas webmail interne) 
+  - [x] recevoir & envoyer en déplacement ou à domicile 
+- [x] __secrétaire__ : contact@woodytoys.be
+- [x] __commerciaux__ : b2b@woodytoys.be
 
 ### VoIP
 ```diff

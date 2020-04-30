@@ -5,6 +5,8 @@ RUN apt-get install -y net-tools
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y nano
 
+ENV DEBIAN_FRONTEND=noninteractive 
+
 # Doc Asterisk : https://doc.ubuntu-fr.org/asterisk
 # Installation des dépendances
 RUN apt install -y \
