@@ -99,9 +99,14 @@ echo "----------------"
 printf "$R 22 $N  $B(SSH)$N\n"
 printf "$R 80 $N  $B(HTTP)$N\n"
 printf "$R 443 $N $B(HTTP\033[0;33mS-SSL)$N\n"
+printf "$R 5060 $N  $B(SIP)$N\n"
+printf "$R 19000-20000 $N  $B(RTP)$N\n"
 sudo ufw allow 22
 sudo ufw allow 80
 sudo ufw allow 443
+sudo ufw allow 5060/udp
+sudo ufw allow 5060/tcp
+sudo ufw allow 19000:20000/udp
 sleep 1
 printf "Done\n"
 sudo ufw disable

@@ -22,3 +22,9 @@ www         IN      A       51.178.40.108
 ; Mail
 mail        IN      A       51.178.40.194
 smtp        IN      CNAME   mail
+
+
+; VoIP
+_sip._udp	SRV     0       0       5060        sip 
+_sip._tcp 	SRV     0       0       5060        sip
+sip 		IN	    A	    51.178.40.108	
