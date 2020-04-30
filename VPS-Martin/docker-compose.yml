@@ -28,12 +28,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5060:5060/udp"
-      #- "10000-20000:10000-20000"
+      - "19000-20000:19000-20000/udp"
     networks:
       dmz_net:
           ipv4_address: 172.16.1.5
     volumes:
-      - ./voIP/config/asterisk:/etc/asterisk/
+      - ./voIP/config/asterisk/:/etc/asterisk/
     container_name: voip
 
 
