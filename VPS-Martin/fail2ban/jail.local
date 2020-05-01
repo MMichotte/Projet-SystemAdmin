@@ -1,0 +1,22 @@
+# Ce fichier viendra complèter/ sur-charger le fichier jail.conf
+
+[DEFAULT]
+
+ignoreip = 127.0.0.1/8 109.128.245.26
+
+bantime  = 518400
+findtime  = 600
+maxretry = 5
+backend = polling
+
+#
+# JAILS
+#
+
+[asterisk]
+enabled  = true
+port     = 5060,5061
+action   = %(banaction)s[name=%(__name__)s-tcp, port="%(port)s", protocol="tcp", chain="%(chain)s", actname=%(banaction)s-tcp]
+           %(banaction)s[name=%(__name__)s-udp, port="%(port)s", protocol="udp", chain="%(chain)s", actname=%(banaction)s-udp]
+logpath  = /home/vps-martin/VPS-Martin/VoIP/logs/messages
+maxretry = 5

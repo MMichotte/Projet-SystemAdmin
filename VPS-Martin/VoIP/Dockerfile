@@ -23,6 +23,9 @@ RUN apt install -y \
   libedit-dev \
   libssl-dev
 
+RUN echo "Europe/Brussels" >> /etc/timezone
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+
 # Installation d'Asterisk
 WORKDIR /usr/local/src/
 RUN wget http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/asterisk-16.9.0.tar.gz
