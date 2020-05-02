@@ -9,6 +9,9 @@ findtime  = 600
 maxretry = 5
 backend = polling
 
+banaction = ufw
+protocol = all
+
 #
 # JAILS
 #
