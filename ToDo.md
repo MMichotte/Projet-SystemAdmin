@@ -43,7 +43,7 @@
 - [x] __vente en ligne__ accessible revendeurs uniquement (b2b.wt2-5.ephec-ti.be)
 
 ### Sécurité
-- [ ] postes doivent avoir accès au services internes et externes
+- [x] postes doivent avoir accès au services internes et externes
 - [ ] contrôle de traffic web 
 - [ ] gestion des identités des employés
 
@@ -63,20 +63,20 @@
 ```
 > __plan d'adressage spécifique__ pour la téléphonie IP
 - [ ] accessible pour les __clients__ depuis internet (extérieur) 
-    - [ ] appel doivent aboutir chez la secrétaire (contact@woodytoys.be) 
-- [ ] Communication inter-employés :
-  - [ ] __ouvriers__ : téléphone IP (atelier + hangar) vers autres départements interne
-  - [ ] __secrétaire__ : softphone vers n'importe qui (y compris extérieur ?)
-  - [ ] __comptables__ : 
-    - [ ] numéro unique -> X peut joindre premier comptable disponible  
-    - [ ] numéro par bureau (2 bureaux) -> comptable peut joindre l'extérieur et tout l'interne (excepté directeur)
-  - [ ] __commerciaux__ : 
-    - [ ] peut joindre l'extérieur et tout l'interne (excepté directeur) ( numéro fixe ? )
-    - [ ] smartphones pour téléphoner en déplacement 
-  - [ ] __direction__ : 
-    - [ ] peut joindre l'extérieur et tout l'interne
-    - [ ] peut être joint qui via la secrétaire 
-- [ ] boîte vocale pour les employés 
+    - [x] appel doivent aboutir chez la secrétaire (contact@woodytoys.be) 
+- [x] Communication inter-employés :
+  - [x] __ouvriers__ : téléphone IP (atelier + hangar) vers autres départements interne
+  - [x] __secrétaire__ : softphone vers n'importe qui (y compris extérieur ?)
+  - [x] __comptables__ : 
+    - [x] numéro unique -> X peut joindre premier comptable disponible  
+    - [x] numéro par bureau (2 bureaux) -> comptable peut joindre l'extérieur et tout l'interne (excepté directeur)
+  - [x] __commerciaux__ : 
+    - [x] peut joindre l'extérieur et tout l'interne (excepté directeur) ( numéro fixe ? )
+    - [x] smartphones pour téléphoner en déplacement 
+  - [x] __direction__ : 
+    - [x] peut joindre l'extérieur et tout l'interne
+    - [x] peut être joint qui via la secrétaire 
+- [x] boîte vocale pour les employés 
 - [ ] Fusion d'entreprise 
     > voir p4 de l'énoncé du projet
 
