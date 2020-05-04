@@ -23,7 +23,7 @@ RUN apt install -y \
   libedit-dev \
   libssl-dev
 
-RUN echo "Europe/Brussels" >> /etc/timezone
+RUN echo "Europe/Brussels" | tee /etc/timezone
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 # Installation d'Asterisk
