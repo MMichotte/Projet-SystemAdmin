@@ -62,7 +62,7 @@
 ! due date : 9 mai 
 ```
 > __plan d'adressage spécifique__ pour la téléphonie IP
-- [ ] accessible pour les __clients__ depuis internet (extérieur) 
+- [x] accessible pour les __clients__ depuis internet (extérieur) 
     - [x] appel doivent aboutir chez la secrétaire (contact@woodytoys.be) 
 - [x] Communication inter-employés :
   - [x] __ouvriers__ : téléphone IP (atelier + hangar) vers autres départements interne
@@ -77,7 +77,7 @@
     - [x] peut joindre l'extérieur et tout l'interne
     - [x] peut être joint qui via la secrétaire 
 - [x] boîte vocale pour les employés 
-- [ ] Fusion d'entreprise 
+- [x] Fusion d'entreprise 
     > voir p4 de l'énoncé du projet
 
 ### Fichiers (optionnel)
