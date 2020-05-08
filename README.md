@@ -14,9 +14,9 @@ Numéro de groupe: 5
 
 ## Liens vers les rapports (format PDF) :
 
-* [Rapport Client](https://drive.google.com/file/d/1Oq_D__mkI_DoCI1cRXod56m26uO6qgBS/view?usp=sharing)
-* [Rapport Technique](https://drive.google.com/file/d/1AMRbhx1lDwMyRdJK9_C59vQLmSIRjrIc/view?usp=sharing)
-* [Analyse Sécurité](https://drive.google.com/file/d/1GoNR7XKXCVj4hD7RUMK0Rknb7dlMP3s2/view?usp=sharing)
+* [Rapport Client](https://ephec-my.sharepoint.com/:b:/g/personal/he201682_students_ephec_be/EXYpsOVuqf9MtKv-AgQzQqQBf0Vp1yAwUsJ6mD3MYROXuw?e=BJDVjD)
+* [Rapport Technique](https://ephec-my.sharepoint.com/:b:/g/personal/he201682_students_ephec_be/EYhPETmRiVtItbtsRxFSJi4B8s8mfS59E-ym40Ob1SS5EQ?e=5Raazn)
+* [Analyse Sécurité](https://ephec-my.sharepoint.com/:b:/g/personal/he201682_students_ephec_be/EdHjMnDHC05JuFfbnsXYeCIBtobD0a1yNcjzYCGf4bvzjw?e=IgNa1w)
 
 ---
 
